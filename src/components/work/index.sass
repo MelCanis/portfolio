@@ -1,0 +1,81 @@
+@import "../../sass"
+.Work
+    +posa
+    +z(2)
+    +t($futosa*4)
+    +l($futosa*2-$futosa*2)
+    +pl($futosa*2)
+    +work
+    +df
+    +h(100%)
+    +pt(30px)
+    +pb($futosa*12)
+    transform: translateY(-30px)
+    flex-wrap: wrap
+    gap: $futosa
+    overflow-y: scroll
+    +trs(0.4s)
+    @media screen and ( max-width: 600px )
+        +cenX
+        +w(70%)
+        +h(70%)
+    @media screen and ( min-width: 600px )
+        gap: $futosa*2
+    &::-webkit-scrollbar
+        +dn
+.Project
+    +posr
+    +w($futosa*32)
+    +mnh($futosa*16)
+    +oh
+    +bg(#44444467)
+    +p($futosa*2 $futosa*2)
+    +pt($futosa*3)
+    +df
+    +jcb
+    +bdrrad(6px)
+    +trs(0.4s)
+    &:hover
+        transform: scale(1.15)
+        +bs(12px 12px 6px #00000040)
+        // +h($futosa*24)
+    div
+        +mnw(70%)
+    h2
+        +fs($futosa*2)
+        +c(#ffffff)
+        +mb($futosa/2)
+    h4
+        +fs($futosa*1.5)
+        font-style: italic
+        +mb($futosa)
+    p
+        +fs($futosa)
+        line-height: $futosa*2
+    img
+        opacity: 0
+        +posa
+        +cen
+        +w(120%)
+        +mnh(100%)
+    .Project_Open
+        +posa
+        // +cen
+        +b($futosa*2)
+        +r($futosa*2)
+        +bg(#444444cc)
+        +p($futosa)
+        +bdrrad(6px)
+    @media screen and ( max-width: 600px )
+        +fdc
+        +p($futosa*3 $futosa*2)
+        +w(100%)
+        
+        div
+            +w(100%)
+        img
+            +mnh(80%)
+        &:hover
+            transform: scale(0.9)
+            +trs(0.4s)
+    
