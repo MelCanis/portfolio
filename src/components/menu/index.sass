@@ -1,34 +1,48 @@
 @import "../../sass"
 
 .Menu
-    +posa
-    +r($futosa*8)
-    +b($futosa*8)
     +work
-    +z(3)
+    +posa
+    // +r($futosa*8)
+    // +b($futosa*8)
+    +r($futosa*4)
+    +b($futosa*4)
+    +z(4)
+    +df
+    +jce
+    +fdc
+    // +bg(green)
     .menu-option
-        // +m($futosa)
-        .menu-option-title
-            line-height: $futosa*2
-            +trs(0.4s)
-            +fs($futosa)
-            letter-spacing: $futosa*0.2
-            text-align: right
-            +f(1)
+        // +m($futosa*0.5)
         +df
         +aic
-        +jcb
+        +jce
+        .menu-option-title
+            +fs($futosa)
+            text-align: right
+            letter-spacing: $futosa*0.2
+            line-height: $futosa*2
+
+            // +ml($futosa*0.5)
+
+            +f(1)
+            +trs(0.4s)
         &:hover
             +trs(0.4s)
             +c($cl)
     .menu-bullet
-        +dn
-        +whs(5px)
-        +bg($c)
+        +whs($futosa*2)
+        +bdrrad(16px)
+        +cenc
+        // +dn
+        // +whs(5px)
+        // +bg($c)
     .menu-active
         .menu-option-title
             +trs(0.4s)
             +c($cl)
             +fs($futosa*2)
         .menu-bullet
-            +whs(7px)
+            +bg($cl)
+            +c($bg)
+            

@@ -5,6 +5,7 @@ import TT from "../../assets/typing-trainer-2.png"
 import SC from "../../assets/soundcloud-clone-preview.png"
 import Stack from "../../assets/stack-preview.png"
 import Piano from "../../assets/piano-preview.png"
+import Nikki from "../../assets/nikki-preview.png"
 
 const projectdata = [
     {
@@ -47,7 +48,7 @@ const projectdata = [
         title: "Firebase Notes App",
         subtitle: "Notes App that uses Firebase Auth & Firestore",
         description: "",
-        img: null
+        img: Nikki
 
     },
     {

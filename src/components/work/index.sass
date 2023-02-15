@@ -1,81 +1,338 @@
 @import "../../sass"
+
 .Work
-    +posa
-    +z(2)
-    +t($futosa*4)
-    +l($futosa*2-$futosa*2)
-    +pl($futosa*2)
-    +work
-    +df
-    +h(100%)
-    +pt(30px)
-    +pb($futosa*12)
-    transform: translateY(-30px)
-    flex-wrap: wrap
-    gap: $futosa
-    overflow-y: scroll
-    +trs(0.4s)
-    @media screen and ( max-width: 600px )
-        +cenX
-        +w(70%)
-        +h(70%)
-    @media screen and ( min-width: 600px )
-        gap: $futosa*2
-    &::-webkit-scrollbar
-        +dn
-.Project
+    +w(100%)
+    +p($futosa*2)
+    // +bg(#00000040)
+    +bdrrad($marusa)
+    // +bs(0 12px 12px #00000070)
+    +mxh($futosa*40)
     +posr
-    +w($futosa*32)
-    +mnh($futosa*16)
-    +oh
-    +bg(#44444467)
-    +p($futosa*2 $futosa*2)
-    +pt($futosa*3)
+    +z(3)
     +df
     +jcb
-    +bdrrad(6px)
-    +trs(0.4s)
-    &:hover
-        transform: scale(1.15)
-        +bs(12px 12px 6px #00000040)
-        // +h($futosa*24)
-    div
-        +mnw(70%)
-    h2
-        +fs($futosa*2)
-        +c(#ffffff)
-        +mb($futosa/2)
-    h4
-        +fs($futosa*1.5)
-        font-style: italic
+
+    @media screen and ( min-width: 750px )
+        animation: slideRightWork 0.75s
+    // @media screen and ( min-width: 750px ) and ( max-width: 900px )
+    //     +aic
+    @media screen and ( max-width: 750px )
+        +jcc
+        +w(100%)
+        +h(75%)
+    @media screen and ( min-width: 1000px )
+        +jcs
+
+@keyframes slideRightWork
+    0%
+        +l(-100px)
+    100%
+        +l(0)
+
+.Projects
+    // +dn
+    // +bg(#00000040)
+        
+    // +bs(0 12px 12px #00000070)
+    +work
+    +mnw($futosa*24)
+    +w($futosa*30)
+    +h(max-content)
+    
+    @media screen and ( max-width: 750px )
+        +h(100%)
+        +mr(0)
+        overflow: scroll
+        &::-webkit-scrollbar
+            +dn
+    // @media screen and ( min-width: 650px ) and ( max-width: 900px )
+    //     +w(100%)
+    
+    // +bdr($c)
+    +bdrrad($marusa)
+    +mr($futosa*3)
+    // +p($futosa*2)
+    +c($cl)
+
+    .projects_top
+        +c($c)
+        +df
+        +aic
         +mb($futosa)
-    p
-        +fs($futosa)
-        line-height: $futosa*2
-    img
+        h1
+            +fs($futosa*1.5)
+            +lts($futosa*0.125)
+            +fwe(400)
+        svg
+            // +c($c)
+            +mr($futosa)
+            +whs($futosa*1.5)
+    .projects_list
+        // +pl($futosa)
+        
+
+    .Project
+        +p($futosa*0.75 $futosa)
+        +mb($futosa/2)
+        +bg(#00000040)
+        +bdr(transparent)
+        +bdrrad($marusa)
+        +trs(0.4s)
+        &:hover
+            +bg($purp)
+    .active
+        @media screen and ( min-width: 750px )
+            animation: slideRight 0.65s
+            +posr
+            +l($futosa*4)
+        +bs(6px 12px 12px #00000040)
+        +bg($purp)
+        // +bdr($cl)
+        font-style: italic
+
+        h4
+            +db
+    h2
+        +fs($futosa*1.5)
+        +lts($futosa*0.125)
+        +c($cl)
+        +fwe(300)
+    h4
+        +dn
+
+        +c($c)
+        +fs($futosa*1)
+        +lts($futosa/8)
+        +fwe(500)
+        animation: fadeIn 1.7s
+
+@keyframes slideRight
+    0%
+        +l(0)
+    100%
+        +l($futosa*4)
+@keyframes fadeIn
+    0%
         opacity: 0
+    100%
+        opacity: 100%
+
+.display
+    // +bg(#00000040)
+    // +bs(0 12px 12px #00000070)
+    +bdrrad($marusa)
+    +p($futosa*2)
+    +work
+    +f(1)
+    // +bg(green)
+    +df
+    +fdc
+    +mxh(100%)
+    +posr
+    // +dn
+    @media screen and ( min-width: 1000px )
+        // align-self: flex-start
+        // +mxw(55%)
+        +mnw($futosa*43)
+        +mxw($futosa*50)
+        +mxw($futosa*75)
+        // +ml($futosa*10)
+        +cenc
+        // +bg(green)
+        // +aic
+        // +jcc
+        // position: relative
+        // +h(max-content)
+        // align-self: flex-end
+        .Panel
+            // +m(none !important)
+            animation: fadeInPanel 0.2s
+        .display_bottom
+            // +bg(green)
+        .description
+            +bg(none)
+            +wh($futosa*50, max-content)
+            +mxh(max-content)
+            +fs($futosa*1.5)
+            
+            opacity: 0
+            // animation: fadeOut 0.2s
+        &:hover
+            .Panel
+                animation: fadeOut 0.5s
+                opacity: 0%
+            .description
+                // +w($futosa*50)
+                
+                // +m(0)
+                +mxw(100%)
+                opacity: 100%
+                animation: fadeInText 0.5s
+                +db
+                +z(5)
+                +posa
+                +cen
+                // +cen
+                +l(52%)
+                // +mr($futosa*4)
+    @media screen and ( max-width: 750px )
+        +p(0)
+        +pb($futosa*4)
+        +m($futosa 0)
+@keyframes fadeOut
+    0%
+        opacity: 100%
+    100%
+        // +dn
+        opacity: 0%
+@keyframes fadeInPanel
+    0%
+        opacity: 0%
+    100%
+        // +dn
+        opacity: 100%
+@keyframes fadeInText
+    0%
+        opacity: 0
+    100%
+        // +dn
+        opacity: 100%
+
+.Panel
+    // +dn
+    // +bg(blue)
+    +posr
+    +oh
+    +bdrrad(4px)
+    +mb($futosa)
+    // +f(1)
+    +bs(0 12px 6px #00000040)
+    img
+        +whs(100%)
+    .Grid
+        +whs(100%)
+        +posa
+        +df
+        +fw
+    .row
+        +wh(100%, 10%)
+        +df
+    .tile
+        // +f(0 1 auto)
+        +f(1)
+        // +whs(5%)
+        +trs(0.35s)
+        +bg($bg)
+    @media screen and ( min-width: 1000px )
+        // +mr($futosa*4)
+        z-index: 4
+    //     +posa
+    //     +cen
+    //     +z(4)
+    //     +w($futosa*50)
+    
+.display_bottom
+    +cenc
+    +fdc
+    +w(100%)
+    // +dn
+    //     +posa
+    //     +cen
+    //     +t(60%)
+    //     +l(60%)
+    //     +z(3)
+    //     +w($futosa*50)
+    
+    // +bg(blue)
+::-webkit-scrollbar
+    +w($futosa)
+::-webkit-scrollbar-thumb 
+    +bdrrad($marusa)
+    background: $dark
+.description
+    +m($futosa 0)
+    +mb(0)
+    +bg(#00000040)
+    +p($futosa)
+    +bdrrad($marusa)
+    // +bs(0 12px 6px #00000064)
+    // +mxw(80%)
+    +fs($futosa*1.25)
+    +fwe(300)
+    +lts($futosa*0.1)
+    +c($cl)
+    +mxh($futosa*12)
+    overflow-y: scroll
+    +bg(#1f1a16)
+    
+
+    @media screen and ( min-width: 1000px )
+        // position: absolute
+        // +cenY
+        // z-index: 5
+        +dn
+        // text-decoration: solid
+        // +mr($futosa*4)
+        // animation: slideDown 0.5s
+        // +bg(#231d1bc6)
+    // +dn
+@keyframes slideDown
+    0%
+        transform: translateY(-50px)
+    100%
+        transform: translateY(0)    
+
+.openSite
+    +cenc
+    +c($bg)
+    +bg($c)
+    +whs($futosa*2)
+    +bs(0 12px 6px #00000040)
+    // +bdr(transparent)
+    border: $futosa/8 solid transparent
+    // +p($futosa/2 $futosa)
+    +p($futosa)
+    +m($futosa/4)
+    +bdrrad($marusa)
+    +trs(0.4s)
+    +work
+    +fs($futosa)
+    +lts($futosa*0.1)
+
+    +posa
+    +b($futosa)
+    +r($futosa)
+    // font-weight: 800
+
+    span
+        // +dn
+        +mr($futosa)
+        +posa
+        +l(-$futosa*4)
+        +c($c)
+        opacity: 100%
+        animation: fadeLoop 4s infinite
+    svg
         +posa
         +cen
-        +w(120%)
-        +mnh(100%)
-    .Project_Open
-        +posa
-        // +cen
-        +b($futosa*2)
-        +r($futosa*2)
-        +bg(#444444cc)
-        +p($futosa)
-        +bdrrad(6px)
-    @media screen and ( max-width: 600px )
-        +fdc
-        +p($futosa*3 $futosa*2)
-        +w(100%)
-        
-        div
-            +w(100%)
-        img
-            +mnh(80%)
-        &:hover
-            transform: scale(0.9)
-            +trs(0.4s)
-    
+        +whs($futosa)
+    &:hover
+        // +bdr($c)
+        span
+            animation: none
+            opacity: 100%
+            +db
+        border: $futosa/8 solid $c
+    @media screen and ( min-width: 1000px )
+        +b(-$futosa)
+        // +r(0)
+    @media screen and ( max-width: 750px )
+        +b(0)
+
+@keyframes fadeLoop
+    0%
+        opacity: 0
+    50%
+        opacity: 100%
+    100%
+        opacity: 0

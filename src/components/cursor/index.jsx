@@ -20,12 +20,12 @@ const Cursor = () => {
             duration: 350,
             easing: 'easeOutBack',
         });
-        anime({
-            targets: ".screen",
-            translateX: x*1.1,
-            translateY: y*1.1,
-            easing: "linear"
-        })
+        // anime({
+        //     targets: ".screen",
+        //     translateX: x*1.1,
+        //     translateY: y*1.1,
+        //     easing: "linear"
+        // })
     }
     useEffect(()=>{
         window.addEventListener("mousemove", track)
