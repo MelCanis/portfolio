@@ -3,7 +3,7 @@ import anime from "animejs"
 import { useEffect } from "react";
 const Hero = () => {
     useEffect(()=>{
-        const dur = 1200;
+        const dur = 2000;
         anime({
             targets: ".Hero>h1",
             translateX: ["100%", 0],

@@ -122,6 +122,7 @@
     // +bs(0 12px 12px #00000070)
     +bdrrad($marusa)
     +p($futosa*2)
+    +pb($futosa*4)
     +work
     +f(1)
     // +bg(green)
@@ -130,6 +131,8 @@
     +mxh(100%)
     +posr
     // +dn
+    @media screen and ( min-width: 750px )
+        +cenc
     @media screen and ( min-width: 1000px )
         // align-self: flex-start
         // +mxw(55%)
@@ -137,7 +140,7 @@
         +mxw($futosa*50)
         +mxw($futosa*75)
         // +ml($futosa*10)
-        +cenc
+        
         // +bg(green)
         // +aic
         // +jcc
@@ -209,6 +212,7 @@
     +bs(0 12px 6px #00000040)
     img
         +whs(100%)
+    animation: fadeInPanel 1s
     .Grid
         +whs(100%)
         +posa
@@ -300,8 +304,9 @@
     +lts($futosa*0.1)
 
     +posa
-    +b($futosa)
+    +b($futosa*2)
     +r($futosa)
+    +z(5)
     // font-weight: 800
 
     span
@@ -324,7 +329,8 @@
             +db
         border: $futosa/8 solid $c
     @media screen and ( min-width: 1000px )
-        +b(-$futosa)
+        // +b(-$futosa)
+        // +b(0)
         // +r(0)
     @media screen and ( max-width: 750px )
         +b(0)
